@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bot Website</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        body { margin: 0; overflow: auto; }
+        #particles-js { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: -1; 
+            pointer-events: none;
+        }
+        #slideshow {
+            position: relative;
+            height: 500px;
+            z-index: 1;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .swiper-pagination-bullet {
+            background-color: #fff;
+        }
+        section { 
+            padding: 20px; 
+            z-index: 1;
+        }
+        .btn:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        /* Features Section */
+        #features {
+            background: #fff;
+            color: #000;
+            border: 2px solid #000;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #features h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        #features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #features li {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            font-size: 1.1rem;
+        }
+        #features li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Slideshow Section -->
+    <section id="slideshow">
+        <div class="slideshow-wrapper">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/bot1.png" alt="Bot Image 1"></div>
+                    <div class="swiper-slide"><img src="images/bot2.png" alt="Bot Image 2"></div>
+                    <div class="swiper-slide"><img src="images/bot3.png" alt="Bot Image 3"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story">
+        <h2>How the Bot Was Created</h2>
+        <p>
+            Our Discord Bot was created with the aim of enhancing the user experience on our server. 
+            From initial brainstorming to the final coding, the journey was both challenging and rewarding. 
+            The bot incorporates advanced features like automated responses, custom commands, and more to ensure a seamless interaction for our community.
+        </p>
+    </section>
+
+    <!-- Buttons Section -->
+    <section id="buttons">
+        <a href="https://discord.gg/JguuW8wvJY" class="btn btn-primary" target="_blank">
+            <img src="images/discord-icon.png" alt="Discord Icon" class="icon"> Join Discord
+        </a>
+        <a href="https://github.com/gorouflex/DuoXPy" class="btn btn-secondary" target="_blank">
+            <img src="images/github-icon.png" alt="GitHub Icon" class="icon"> Download Source Code
+        </a>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <h2>Features of Our Discord Bot</h2>
+        <ul>
+            <li>XP Farm.</li>
+            <li>Streak Saver.</li>
+            <li>Multi Account Feature.</li>
+            <li>Gems Farm Coming Soon.</li>
+            <li>And More...</li>
+        </ul>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js"></script>
+    <script>
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+                "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 4, "size_min": 0.1, "sync": false } },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+                "move": { "enable": true, "speed": 3, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": false, "rotateX": 600, "rotateY": 1200 } }
+            },
+            "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true } },
+            "retina_detect": true
+        });
+
+        // Initialize Swiper
+        const swiper = new Swiper('.swiper-container', {
+            effect: 'slide',
+            autoplay: { delay: 3000 },
+            loop: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }
+        });
+    </script>
+</body>
+</html>
